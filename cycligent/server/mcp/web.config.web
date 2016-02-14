@@ -1,0 +1,18 @@
+<configuration>
+  <system.webServer>
+    <iisnode nodeProcessCommandLine="&quot;%programfiles%\nodejs\node.exe&quot;" logDirectory="..\iisnodeLogs" />
+    <handlers>
+      <add name="iisnode" path="mcp/server.js" verb="*" modules="iisnode" />
+    </handlers>
+      <rewrite>
+           <rules>
+                <rule name="Debug" patternSyntax="Wildcard" stopProcessing="true">
+                    <match url="server.js/*" />
+                </rule>
+                <rule name="NodeContent">
+                     <action type="Rewrite" url="mcp/server.js" />
+                </rule>
+           </rules>
+      </rewrite>
+  </system.webServer>
+</configuration>

@@ -1,0 +1,90 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <style>
+        html { background: #B2E0EF }
+
+        #divMain
+        {
+            background-color:white;
+            border-radius: 7px;
+            width: 350px;
+            font-family: calibri;
+            color: gray;
+            position: absolute;
+            top: 30%;
+            left: 40%;
+        }
+
+        #divLoginHdr
+        {
+            height: 30px;
+            background-color:#00B6DE;
+            border-top-left-radius: 7px;
+            border-top-right-radius: 7px;
+            text-align: left;
+            padding: 20px;
+            color: white;
+            font-size: 20px;
+            background: -webkit-linear-gradient(left, #00B6DE , #63D6EC); /* For Safari */
+            background: -o-linear-gradient(right, #00B6DE, #63D6EC); /* For Opera 11.1 to 12.0 */
+            background: -moz-linear-gradient(right, #00B6DE, #63D6EC); /* For Firefox 3.6 to 15 */
+            background: linear-gradient(to right, #00B6DE , #63D6EC); /* Standard syntax */
+        }
+
+        #divLogin
+        {
+            text-align: right;
+            padding: 25px;
+        }
+
+        #divCenterSection
+        {
+            padding: 10px;
+        }
+
+        #divUserName
+        {
+            padding: 5px;
+        }
+
+        #divPassword
+        {
+            padding: 5px;
+        }
+
+        #divPowerBy
+        {
+            color: black;
+            font-size: 12px;
+            text-align: center;
+
+        }
+
+    </style>
+</head>
+
+<form id='loginForm' action="{{actionURL}}" method='post'>
+    <div id='divMain'>
+        <div id='divLoginHdr'>
+            <label>Login</label>
+        </div>
+        <div id='divCenterSection'>
+            {{message}}
+            <div id='divUserName'>
+                <label for='username'>Username</label><br/>
+                <input type='text' name='user_id' id='username' placeholder='username' size='45' autofocus='autofocus'/>
+            </div>
+            <div id='divPassword'>
+                <label for='password'>Password</label><br/>
+                <input type='password' name='password' id='password' placeholder='password' size='45' autocomplete="off"/>
+            </div>
+            <input type="hidden" name="requestWas" id="requestWas" value="{{requestWas}}"/>
+            <div id='divLogin'>
+                <input type='submit' id='login' value=' Login '  />
+            </div>
+            <div id='divPowerBy'><em>Powered by Cycligent - &copy;2014</em></div>
+        </div>
+    </div>
+</form>
+</html>
